@@ -49,6 +49,7 @@ app.post("/add", (req, res) => {
     if (user_name == undefined || user_email == undefined || user_password == undefined || user_address == undefined || user_name == '' || user_email == '' || user_password == '' || user_address == '') {
         res.status(401).send({
             message: "Invalid Data",
+            data: req.body
         });
     } else {
         let qr = `INSERT INTO users(user_name, user_email, user_password, user_address) VALUES ('${user_name}','${user_email}','${user_password}','${user_address}')`;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import './index.css';
-//import Axios from "axios";
+import Axios from "axios";
 
 const Add = () => {
 
@@ -25,10 +25,7 @@ const Add = () => {
     let { name, value} = e.target
     setUserData({...userData, [name]:value});
     //console.log(userData);
-    // Axios.post('http://localhost:3001/add',userData)
-    // .then(() => {
-    //   console.log('post request sent');
-    // })
+    
   }
 
 
@@ -42,6 +39,25 @@ const Add = () => {
     //console.log(errors);
     if(Object.keys(errors).length === 0 && canSubmit){
       //console.log(userData);
+      Axios.post('http://localhost:3002/add',userData)
+    .catch(function (error) {
+    if (error.response) {
+      // Request made and server responded
+      console.log(error.response.data);
+      console.log(error.response.status);
+      console.log(error.response.headers);
+    } else if (error.request) {
+      // The request was made but no response was received
+      console.log(error.request);
+    } else {
+      // Something happened in setting up the request that triggered an Error
+      console.log('Error', error.message);
+    }
+
+  })
+    .then(() => {
+      console.log('post request sent');
+    })
     }
   },[canSubmit, errors]);
 
