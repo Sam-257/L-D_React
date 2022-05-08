@@ -5,6 +5,7 @@ import Home from "./Components/Home";
 import Add from "./Components/Add";
 import View from "./Components/View";
 import Todo from "./Components/Todo";
+import Form from "./Components/Form";
 
 
 
@@ -18,6 +19,7 @@ function App() {
           <Route exact path="/add" element={<Add />} />
           <Route exact path="/view" element={<View />} />
           <Route exact path="/todo" element={<Todo />} />
+          <Route exact path="/form" element={<Form />} />
         </Routes>
       </BrowserRouter>
     </div>
