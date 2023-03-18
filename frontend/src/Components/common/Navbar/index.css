@@ -1,0 +1,11 @@
+img{
+    height: 30px;
+    width: 130px;
+    padding-left: 10px;
+    margin-top: 9px;
+}
+
+.nav-item{
+    padding-right: 20px;
+    font-size: large;
+}
